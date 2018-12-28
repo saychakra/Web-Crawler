@@ -29,8 +29,15 @@ class Spider:
 
 
     @staticmethod
-    def add_links_to_queue(urls):
-        pass
+    def add_links_to_queue(links):
+        for url in links:
+            # checking if the urls are not in either of the queue list or the crawler list
+            if url in Spider.queue or url in Spider.crawled:
+                continue
+            # explained in readme
+            if Spider.domain_name not in url:
+                continue
+            Spider.queue.add(url)
 
 
     @staticmethod
