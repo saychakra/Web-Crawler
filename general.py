@@ -48,9 +48,9 @@ def create_project_dir(directory):
 # creating a new file
 def create_data_files(project_name, base_url):
     queue = project_name + '/queue.txt'
-    crawler = project_name + '/crawler.txt'
+    crawled = project_name + '/crawled.txt'
     if not os.path.isfile(queue):
         write_file(queue, base_url) # we pass the base_url as the initial variable
-    if not os.path.isfile(crawler):
-        write_file(crawler, '')
+    if not os.path.isfile(crawled):
+        write_file(crawled, '')
     
