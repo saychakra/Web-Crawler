@@ -20,6 +20,22 @@ def delete_file_contents(path):
         pass
 
 
+# read a file and convert each line into set items
+def file_to_set(fileName):
+    results = set()
+    with open(fileName, 'rt') as f: #rt is read text file
+        for line in f:
+            results.add(line.replace('\n', ''))
+    return results
+
+# Iterate through a set. Each items in the set, will be a new line in the file
+def set_to_file(links, fileName):
+    # delete the existing items in the file because they are old data
+    delete_file_contents(fileName)
+    # iterating through the set after sorting them alphabatically
+    for link in sorted(links):
+        append_to_file(fileName, link)
+
 ################################################################################################
 
 
