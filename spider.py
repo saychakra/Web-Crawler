@@ -52,7 +52,6 @@ class Spider:
             finder = LinkFinder(Spider.base_url, page_url)
             finder.feed(html_string)
         except Exception as e:
-            print("Error: Cannot Crawl Page")
             print(str(e))
             return set() # our function needs to return a set from where it is called. 
             # Hence even if anything is not found at least an empty set should be returned
