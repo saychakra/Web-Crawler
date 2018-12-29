@@ -46,13 +46,14 @@ class Spider:
         try:
             response = urlopen(page_url)
             # just check if the page contains html and is not something else eg. a pdf or something
-            if response.getheader('Content-Type') == 'text/html': 
+            if 'text/html' in response.getheader('Content-Type'): 
                 html_bytes = response.read() # reading the raw bytes from response to html_bytes
-                html_string = html_bytes.decode('utf-8') # decoding the bytes to utf-8 string format
+                html_string = html_bytes.decode("utf-8") # decoding the bytes to utf-8 string format
             finder = LinkFinder(Spider.base_url, page_url)
             finder.feed(html_string)
-        except:
+        except Exception as e:
             print("Error: Cannot Crawl Page")
+            print(str(e))
             return set() # our function needs to return a set from where it is called. 
             # Hence even if anything is not found at least an empty set should be returned
         # finally returning the set of urls from the LinkFinder.page_links()

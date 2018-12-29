@@ -12,7 +12,7 @@ def write_file(path, data):
 # appending contents at the end of the file
 def append_to_file(path, data):
     with open(path, 'a') as file:
-        file.write(data)
+        file.write(data + '\n')
     
 # deleting the contents of a file
 def delete_file_contents(path):
