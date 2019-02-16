@@ -22,6 +22,8 @@ Well, what I'll be trying to do here, is:
       - Each of the crawled URLs which belong to the same domain name are put in a final file, "crawled.txt" (which is the final output)
    4. Finally, the process is sped up using multithreading.
 
+<br>
+
 #### Speeding up the process
 In general, as far as computational time is concerned, writing into a file takes a considerably good amount of time. In general, when we are trying to crawl over a huge page, this can come into as a difficulty and then my friend, you can observe the noticable time lag! 
 So to solve this problem, one approach is to use variables. But again, those are temporary solutions. Thus, as a final solutions we can use the best feature of both by using a set.
